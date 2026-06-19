@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Become a Donor - BloodLink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="login-container">
+
+```
+<div class="login-box">
+
+    <h1>❤️ Become a Donor</h1>
+
+    <form id="donorForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="tel"
+            id="phone"
+            placeholder="Phone Number"
+            required
+        >
+
+        <select id="blood_group" required>
+            <option value="">Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <input
+            type="text"
+            id="city"
+            placeholder="City"
+            required
+        >
+
+        <select>
+            <option value="">Availability</option>
+            <option>Available</option>
+            <option>Unavailable</option>
+        </select>
+
+        <button type="submit">
+            Register as Donor
+        </button>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+<script>
+
+document.getElementById("donorForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const data = {
+        name: document.getElementById("name").value,
+        blood_group: document.getElementById("blood_group").value,
+        city: document.getElementById("city").value,
+        phone: document.getElementById("phone").value
+    };
+
+    try {
+
+        const response = await fetch("http://127.0.0.1:8000/donors", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        alert(result.message);
+
+        document.getElementById("donorForm").reset();
+
+    } catch(error) {
+
+        console.error(error);
+
+        alert("Donor Registration Failed");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>

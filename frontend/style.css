@@ -1,0 +1,287 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#f8f9fa;
+}
+
+nav{
+    background:#c1121f;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    text-align:center;
+
+    background:
+    linear-gradient(
+   rgba(120,0,0,0.45),
+rgba(193,18,31,0.45)
+    ),
+    url("images/blood-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    padding:120px 20px;
+
+    color:white;
+   height: 450px;
+}
+
+.hero h1{
+    color:white;
+    font-size:48px;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:20px;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    background:#c1121f;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+.hero-buttons button{
+    padding:18px 35px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:50px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:white;
+    width:300px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.card h2{
+    color:#780000;
+}
+
+
+footer{
+    background:#780000;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.login-container{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(
+        rgba(120,0,0,0.7),
+        rgba(193,18,31,0.7)
+    ),
+    url("images/blood-bg.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.login-box{
+    background:white;
+    padding:40px;
+    width:400px;
+    border-radius:12px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+    text-align:center;
+}
+
+.login-box h1{
+    color:#c1121f;
+    margin-bottom:10px;
+}
+
+.login-box h2{
+    color:#780000;
+    margin-bottom:25px;
+}
+
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+.login-box button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    background:#c1121f;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.login-box a{
+    color:#c1121f;
+    text-decoration:none;
+    font-weight:bold;
+}
+select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:6px;
+    resize:none;
+}
+.appeal-header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.appeal-feed{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.appeal-post{
+    background:white;
+    margin-bottom:25px;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+.critical{
+    border-left:8px solid red;
+}
+
+.urgent{
+    border-left:8px solid orange;
+}
+
+.badge{
+    background:red;
+    color:white;
+    padding:5px 10px;
+    border-radius:5px;
+    font-size:12px;
+}
+.appeal-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f5f5f5;
+    padding:40px;
+}
+
+.appeal-form{
+    background:white;
+    width:700px;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+}
+
+.appeal-form h1{
+    color:#c1121f;
+    margin-bottom:10px;
+}
+
+.appeal-form p{
+    margin-bottom:20px;
+    color:gray;
+}
+
+.appeal-form input,
+.appeal-form select,
+.appeal-form textarea{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.appeal-form button{
+    width:100%;
+    padding:15px;
+    background:#c1121f;
+    color:rgb(255, 254, 254);
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    font-weight:bold;
+}
+.latest-appeals{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.appeal-preview{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.mini-appeal{
+    background:white;
+    width:250px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    border-top:5px solid #c1121f;
+    text-align:left;
+}
+
+.mini-appeal h3{
+    color:#c1121f;
+    margin-bottom:10px;
+}
+
+.mini-appeal p{
+    color:#444;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Create Appeal - BloodLink</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <h2>🩸 BloodLink</h2>
+
+```
+<div>
+    <a href="index.html">Home</a>
+    <a href="appeals.html">Appeals</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Sign Up</a>
+</div>
+```
+
+</nav>
+
+<div class="appeal-container">
+
+```
+<div class="appeal-form">
+
+    <h1>🚨 Emergency Blood Appeal</h1>
+
+    <p>Create an urgent request for blood donors.</p>
+
+    <form id="appealForm">
+
+        <input
+            type="text"
+            id="patient_name"
+            placeholder="Patient Name"
+            required
+        >
+
+        <select id="blood_group" required>
+            <option value="">Select Blood Group</option>
+            <option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            <option>O+</option>
+            <option>O-</option>
+        </select>
+
+        <input
+            type="text"
+            placeholder="Hospital Name"
+            required
+        >
+
+        <input
+            type="text"
+            id="city"
+            placeholder="City"
+            required
+        >
+
+        <input
+            type="tel"
+            placeholder="Contact Number"
+            required
+        >
+
+        <select id="priority" required>
+            <option value="">Select Priority</option>
+            <option>Normal</option>
+            <option>Urgent</option>
+            <option>Critical</option>
+        </select>
+
+        <textarea rows="5" placeholder="Additional Details"></textarea>
+
+        <button type="submit">
+            🚨 Submit Appeal
+        </button>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+<script>
+
+document.getElementById("appealForm").addEventListener("submit", async function(e) {
+
+    e.preventDefault();
+
+    const data = {
+        patient_name: document.getElementById("patient_name").value,
+        blood_group: document.getElementById("blood_group").value,
+        city: document.getElementById("city").value,
+        priority: document.getElementById("priority").value
+    };
+
+    try {
+
+        const response = await fetch("http://127.0.0.1:8000/appeals", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        alert(result.message);
+
+        document.getElementById("appealForm").reset();
+
+    } catch(error) {
+
+        console.error(error);
+
+        alert("Appeal Submission Failed");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
